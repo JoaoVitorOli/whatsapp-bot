@@ -6,7 +6,6 @@ import moment from "moment";
 import { exec } from "child_process";
 import ffmpeg from "fluent-ffmpeg";
 
-// eslint-disable-next-line import/no-unresolved
 import { pixabayKey, info } from "./config/config";
 
 const conn = new WAConnection();
@@ -21,7 +20,6 @@ conn.on("credentials-updated", () => {
   fs.writeFileSync("./auth_info.json", JSON.stringify(authInfo, null, "\t"));
 });
 
-// eslint-disable-next-line no-unused-expressions
 fs.existsSync("./auth_info.json") && conn.loadAuthInfo("./auth_info.json");
 
 conn.connect();
