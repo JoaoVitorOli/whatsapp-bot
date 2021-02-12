@@ -24,5 +24,5 @@ yarn ts-node-dev src/index.ts
 ou
 
 ```
-yarn dev:start
+yarn start
 ```

@@ -42,6 +42,9 @@ conn.on("chat-update", async (chat) => {
 
     const messageType = Object.keys(contentKey)[0];
 
+    const args = messageContent.slice(0).split(/ +/);
+    const command = args.shift()?.toLowerCase();
+
     // Comandos
 
     console.log(`
@@ -49,19 +52,18 @@ conn.on("chat-update", async (chat) => {
     ${messageType}
     `);
 
-    if (messageContent.includes("!info")) {
+    if (command === "!info") {
       conn.sendMessage(id, info, MessageType.text);
     }
 
-    if (messageContent.includes("!hello")) {
+    if (command === "!hello") {
       const messageReturn = "hello there!";
       conn.sendMessage(id, messageReturn, MessageType.text);
     }
 
-    if (messageContent.includes("!image")) {
-      const text = messageContent.slice(1);
-      const args = text.split(" ");
-      const search = args.slice(0).toString();
+    if (command === "!image") {
+      const text = messageContent.toLowerCase();
+      const search = text.replace("!image", "");
       const URL = `https://pixabay.com/api/?key=${pixabayKey}&q=${encodeURIComponent(search)}`;
       console.log(URL);
 
@@ -94,7 +96,7 @@ conn.on("chat-update", async (chat) => {
       });
     }
 
-    if (messageContent.includes("!biblia")) {
+    if (command === "!biblia") {
       try {
         const response = await axios.get("https://www.abibliadigital.com.br/api/verses/nvi/random");
         const { name } = response.data.book;
@@ -146,10 +148,8 @@ conn.on("chat-update", async (chat) => {
       try {
         const caption = videoMessage.caption.toLowerCase();
 
-        console.log(`
-        caption:
-        ${caption}
-        `);
+        console.log("caption: ");
+        console.log(caption);
 
         if (caption === "!sticker") {
           const video = await conn.downloadAndSaveMediaMessage(m, "videoToSticker");

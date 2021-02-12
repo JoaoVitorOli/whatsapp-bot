@@ -1,2 +1,2 @@
-export const pixabayKey: string = "PIXABAY-KEY"; // Você pode obter aqui: https://pixabay.com/api/docs/
-export const info: string = "*Comandos*:\n\n*!biblia*: Retorna um verso aleatório da biblia;\n\n*!image [tema]*: Retorna uma imagem aleatória com o tema que você especificar. Exemplo: !image dog, !image cat;\n\n*!sticker*: Esse comando transforma uma imagem ou um gif em um sticker, basta mandar uma imagem com a legenda: !sticker.";
+export const pixabayKey: string = "16723887-e0c5662281a5046100691a1df"; // Você pode obter aqui: https://pixabay.com/api/docs/
+export const info: string = "*Comandos*:\n\n*!biblia*: Retorna um verso aleatório da biblia;\n\n*!image [tema]*: Retorna uma imagem aleatória com o tema que você especificar. Exemplo: !image dog, !image cat;\n\n*!sticker*: Esse comando transforma uma imagem ou gif em um sticker, basta mandar uma imagem com a legenda: !sticker.";

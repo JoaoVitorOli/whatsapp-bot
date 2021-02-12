@@ -1,10 +1,10 @@
 {
-  "name": "JohnnyWPP",
+  "name": "whatsapp-bot",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev src/index.ts"
   },
   "devDependencies": {
     "@types/image-to-base64": "^2.1.0",
